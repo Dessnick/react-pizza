@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 // class Categories extends React.Component {
 // 	state = {
@@ -18,10 +18,10 @@ import React from 'react'
 // 				<ul>
 // 				<li>Все</li>
 // 				{
-// 					items.map((name, index) => 
-// 						<li 
-// 							key={`${name}_${index}`} 
-// 							className={this.state.activeItem === index ? 'active' : ''} 
+// 					items.map((name, index) =>
+// 						<li
+// 							key={`${name}_${index}`}
+// 							className={this.state.activeItem === index ? 'active' : ''}
 // 							onClick={() => this.onSelectItem(index)}>
 // 							{ name }
 // 						</li>)
@@ -33,30 +33,30 @@ import React from 'react'
 // };
 
 function Categories({ items, onClick }) {
-	const [activeItem, setActiveItem] = React.useState(null);
-	
-	const onSelectItem = (index) => {
-		setActiveItem(index);
-	};
-	
-	return (
-		<div className="categories">
-			<ul>
-			<li 
-				className={activeItem === null ? 'active' : ''}
-				onClick={() => onSelectItem(null)}>Все</li>
-			{items && 
-				items.map((name, index) => 
-					<li 
-						key={`${name}_${index}`} 	
-						className={activeItem === index ? 'active' : ''}
-						onClick={() => onSelectItem(index)}>
-						{ name }
-					</li>)
-			}
-			</ul>
-		</div>
-	)
-};
+  const [activeItem, setActiveItem] = React.useState(null);
 
-export default Categories
+  const onSelectItem = (index) => {
+    setActiveItem(index);
+  };
+
+  return (
+    <div className="categories">
+      <ul>
+        <li className={activeItem === null ? 'active' : ''} onClick={() => onSelectItem(null)}>
+          Все
+        </li>
+        {items &&
+          items.map((name, index) => (
+            <li
+              key={`${name}_${index}`}
+              className={activeItem === index ? 'active' : ''}
+              onClick={() => onSelectItem(index)}>
+              {name}
+            </li>
+          ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Categories;
