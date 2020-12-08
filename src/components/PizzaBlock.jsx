@@ -42,7 +42,7 @@ function PizzaBlock({ name, imageUrl, price, types, sizes }) {
                 active: activeSize === size,
                 disabled: !sizes.includes(size),
               })}
-              onClick={() => onSelectSize(index)}>
+              onClick={() => onSelectSize(size)}>
               {size} см.
             </li>
           ))}
