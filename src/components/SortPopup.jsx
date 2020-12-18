@@ -53,7 +53,7 @@ const SortPopup = React.memo(function SortPopup({ items, activeSortType, onClick
                 <li
                   key={`${obj.type}_${index}`}
                   className={activeSortType === obj.type ? 'active' : ''}
-                  onClick={() => onSelectItem(obj.type)}>
+                  onClick={() => onSelectItem(obj)}>
                   {obj.name}
                 </li>
               ))}
