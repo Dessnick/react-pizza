@@ -40,7 +40,7 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
               key={type}
               className={classNames({
                 active: activeType === index,
-                disabled: !types.includes(index),
+                disabled: !types.includes(index) || addedCount > 0,
               })}
               onClick={() => onSelectType(index)}>
               {type}
@@ -53,7 +53,7 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
               key={size}
               className={classNames({
                 active: activeSize === index,
-                disabled: !sizes.includes(size),
+                disabled: !sizes.includes(size) || addedCount > 0,
               })}
               onClick={() => onSelectSize(index)}>
               {size} см.
